@@ -1,14 +1,9 @@
 .Header {
   position: fixed;
-  /* 화면에 고정 */
   top: 45px;
-  /* 화면의 맨 위에 위치 */
   left: 0;
-  /* 화면의 맨 왼쪽에 위치 */
   width: 100%;
-  /* 전체 너비를 차지 */
   height: 155px;
-  /* 원하는 높이 */
   background: #FFF5DB;
 
   z-index: 1000;
@@ -36,13 +31,10 @@
 
 .navi_ul {
   display: flex;
-  /* 가로로 정렬 */
   list-style: none;
-  /* 기본 리스트 스타일 제거 */
   padding: 0;
   margin: 0;
   justify-content: center;
-  /* 가운데 정렬 */
 }
 
 .navi_item {
@@ -82,7 +74,6 @@
   position: absolute;
   top: 50%;
   left: 220px;
-  /* 로고 오른쪽에 배치 (로고 너비 200px 고려) */
   transform: translateY(-50%);
   display: flex;
   gap: 20px;
@@ -106,12 +97,11 @@
 
 .login_nav_ul {
   display: flex;
-  /* 가로로 정렬 */
   list-style: none;
   padding: 0;
   margin: 0;
   justify-content: right;
-  /* 가운데 정렬 */
+
 }
 
 .login_nav_ul li {
@@ -141,23 +131,17 @@
 .Signup_a {
   color: #000000;
   width: 170px;
-  /* 파란색으로 변경 (원하는 색상으로 수정) */
   text-decoration: none;
-  /* 기본 밑줄 제거 */
 }
 
-/* 로그인, 회원가입, 로그아웃 클릭 시 색상 변화 */
 .login_a:hover,
 .Signup_a:hover {
   color: #1d72b8;
-  /* 마우스를 올렸을 때 색상 (원하는 색상으로 수정) */
 }
 
-/* 클릭했을 때 색상 변화 */
 .login_a:active,
 .Signup_a:active {
   color: #1a6bbd;
-  /* 클릭 시 색상 */
 }
 
 .Signup_li {

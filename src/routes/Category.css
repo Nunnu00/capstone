@@ -1,18 +1,13 @@
 .Category {
     padding-top: 200px;
-    /* 헤더 높이에 맞춰 여백 추가 */
     padding-bottom: 180px;
-    /* 푸터 높이에 맞춰 여백 추가 */
     min-height: calc(100vh - 280px);
-    /* 전체 화면 높이에서 헤더(100px)와 푸터(180px)의 높이를 빼고 남은 공간을 차지하도록 설정 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* 콘텐츠가 위쪽에 정렬되도록 */
     text-align: center;
     overflow-y: auto;
-    /* 스크롤이 필요하면 세로로 스크롤 가능 */
 }
 
 h2 {
