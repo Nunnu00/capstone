@@ -7,6 +7,7 @@ import Signup from "./routes/Signup";
 import Detail from "./routes/Details";
 import Order from "./routes/Order";
 import Category from "./routes/Category";
+import QAPage from "./routes/QAPage";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/detail/:id" element={<Detail />} />
       <Route path="/order" element={<Order />} />
       <Route path="/category/:category" element={<Category />} />
+      <Route path="/Q&A" element={<QAPage />} />
     </Routes>
 
   );

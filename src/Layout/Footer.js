@@ -1,7 +1,9 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from "react-router-dom";
+
 const Footer = () => {
- return (
+  return (
     <footer className="footer">
       <hr />
       <div className="footer-content-wrapper">
@@ -23,7 +25,7 @@ const Footer = () => {
         </div>
         <div className="footer-content">
           <h3>고객 서비스</h3>
-        <hr/>
+          <hr />
           <ul className='footer-ul'>
             <li >
               <a href="#brand-info" className="footer-link">
@@ -46,16 +48,16 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#location" className="footer-link">
+              <Link to="/Q&A" className="footer-link">
                 고객 문의
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
         <div className="footer-content">
           <h3>제품 목록</h3>
-        <hr/>
+          <hr />
           <ul className='footer-ul'>
             <li >
               <a href="#brand-info" className="footer-link">
@@ -81,33 +83,33 @@ const Footer = () => {
         </div>
         <div className="footer-content">
           <h3>소셜 미디어</h3>
-        <hr/>
+          <hr />
           <ul className='footer-ul'>
             <li >
               <a href="#brand-info" className="footer-link">
-              Instagram
+                Instagram
               </a>
             </li>
             <li>
               <a href="#location" className="footer-link">
-              Facebook
+                Facebook
               </a>
             </li>
             <li>
               <a href="#location" className="footer-link">
-              Youtube
+                Youtube
               </a>
             </li>
             <li>
               <a href="#location" className="footer-link">
-               Twitter
+                Twitter
               </a>
             </li>
           </ul>
         </div>
       </div>
       <div>
-      <h1 className="footer-email">  1971435@hansung.ac.kr 010-1234-1234</h1> 
+        <h1 className="footer-email">  1971435@hansung.ac.kr 010-1234-1234</h1>
       </div>
     </footer>
 
