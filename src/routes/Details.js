@@ -1,22 +1,34 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import './Details.css';
-import { useNavigate } from "react-router-dom";
+import { useLogin } from "../context/LoginContext";
+import { useCart } from "../context/CartContext";
+
 const Detail = () => {
-  const location = useLocation(); // location을 통해 state를 가져옵니다.
-  const { state } = location;  // state에서 product를 추출
+  const location = useLocation();
+  const { state } = location;
   const product = state;
-  console.log("상세 페이지로 전달된 상품:", product);
   const navigate = useNavigate();
+
+  // LoginContext에서 로그인 상태를 가져옵니다.
+  const { isLoggedIn } = useLogin();
+  const { addToCart } = useCart();
+
   const handleOrderClick = () => {
-    // 상품 정보를 state로 주문 페이지로 넘기기
-    navigate("/order", { state: { product } });
+    // 로그인이 되어 있지 않으면 경고문을 띄운 후 로그인 페이지로 이동
+    if (!isLoggedIn) {
+      alert("로그인 후 이용해주세요.");
+      navigate("/login"); // 로그인 페이지로 이동
+    } else {
+      // 상품 정보를 state로 주문 페이지로 넘기기
+      navigate("/order", { state: { product } });
+    }
   };
 
-  useEffect(() => {
-    {/*스크롤 위로*/ }
-    window.scrollTo(0, 0);
-  }, []);
+  const handleAddToCart = () => {
+    addToCart(product);
+    alert("장바구니에 추가되었습니다!");
+  };
 
   return (
     <div className="product">
@@ -26,14 +38,15 @@ const Detail = () => {
         </div>
 
         <div className="product-info">
-          <h1>{product.name}</h1>
+          <h1>{product.title}</h1>
           <h2>{product.price}원</h2>
           <p>{product.content}</p>
           <div className="button-container">
-            <button className="add-to-cart">장바구니 추가</button>
+            <button className="add-to-cart" onClick={handleAddToCart}>
+              장바구니 추가
+            </button>
             <button className="buy-now" onClick={handleOrderClick}>구매하기</button>
           </div>
-
         </div>
       </div>
 
